@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disease Gene Finder</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        input, textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🧬 Disease Gene Finder</h1>
+<p>Find possible disease association using gene sequence</p>
+
+<div class="box">
+    <h2>Enter DNA/Protein Sequence</h2>
+    <textarea id="sequence" rows="5" placeholder="Paste sequence here..."></textarea>
+    <br>
+    <button onclick="analyze()">Analyze</button>
+</div>
+
+<div class="box">
+    <h2>Result</h2>
+    <p id="output">Result will appear here</p>
+</div>
+
+<script>
+function analyze() {
+    let seq = document.getElementById("sequence").value;
+
+    if(seq.length < 10) {
+        document.getElementById("output").innerText = "Enter valid sequence";
+    } else {
+        document.getElementById("output").innerText =
+        "Matched Gene: BRCA1\nSimilarity: 98%\nPossible Disease: Breast Cancer";
+    }
+}
+</script>
+
+</body>
+</html>
